@@ -8,6 +8,7 @@
     <script>
         axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSLA&apikey=YOUR_API_KEY')
             .then(function (response) {
+                document.body.innerHTML += JSON.stringify(response.data);
                 console.log(response.data);
             })
             .catch(function (error) {
