@@ -17,75 +17,15 @@
 <body>
     <div class="w3-container">
         <h2>Get TSLA Data</h2>
-        <table></table>
     <script>
-        async function printDataToDOM(data) {
-            const table = document.querySelector('table');
-            const timeSeries = data['Time Series (1min)'];
-            for (const date in timeSeries) {
-                const tr = document.createElement('tr');
-                const td1 = document.createElement('td');
-                const td2 = document.createElement('td');
-                const td3 = document.createElement('td');
-                const td4 = document.createElement('td');
-                const td5 = document.createElement('td');
-                td1.textContent = date;
-                td2.textContent = timeSeries[date]['1. open'];
-                td3.textContent = timeSeries[date]['2. high'];
-                td4.textContent = timeSeries[date]['3. low'];
-                td5.textContent = timeSeries[date]['4. close'];
-                tr.appendChild(td1);
-                tr.appendChild(td2);
-                tr.appendChild(td3);
-                tr.appendChild(td4);
-                tr.appendChild(td5);
-                table.appendChild(tr);
-            }
-        }
-        async function saveToIndexedDB(key, val) {
-            const db = await idb.openDB('TSLA', 1, {
-                upgrade(db) {
-                    db.createObjectStore('TSLA');
-                },
+        axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSLA&apikey=YOUR_API_KEY&interval=1min,outputsize=full&datatype=json')
+            .then(function (response) {
+                document.body.innerHTML += JSON.stringify(response.data);
+                console.log(response.data);
+            })
+            .catch(function (error) {
+                console.log(error);
             });
-            await db.put('TSLA', val, key);
-            alert('Data saved to indexedDB')
-        }
-        async function getFromIndexedDB(key) {
-            const db = await idb.openDB('TSLA', 1);
-            return db.get('TSLA', key);
-        }
-        async function getTSLAData() {
-            const data = await getFromIndexedDB('TSLA');
-            if (data) {
-                printDataToDOM(data);
-            } else {
-                axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=TSLA&apikey=V476E4UJS67XBTL9&interval=1min,outputsize=full&datatype=json')
-                    .then(function (response) {
-                        printDataToDOM(response.data);
-                        // saveToIndexedDB('TSLA', response.data);
-                    })
-                    .catch(function (error) {
-                        alert(error);
-                    });
-            }
-        }
-        async function getLast60MinutesData() {
-            const data = await getFromIndexedDB('TSLA');
-            const timeSeries = data['Time Series (1min)'];
-            const last60Minutes = Object.keys(timeSeries).slice(0, 60);
-            const last60MinutesData = last60Minutes.map((date) => {
-                return {
-                    date,
-                    open: timeSeries[date]['1. open'],
-                    high: timeSeries[date]['2. high'],
-                    low: timeSeries[date]['3. low'],
-                    close: timeSeries[date]['4. close'],
-                };
-            });
-            // console.log(last60MinutesData);
-        }
-        window.onload = getTSLAData;
     </script>
     </div>
 </body>
