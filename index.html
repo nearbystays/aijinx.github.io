@@ -18,7 +18,7 @@
     <div class="w3-container">
         <h2>Get TSLA Data</h2>
     <script>
-        axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSLA&apikey=YOUR_API_KEY&interval=1min,outputsize=full&datatype=json')
+        axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=TSLA&apikey=YOUR_API_KEY&interval=1min,outputsize=full&datatype=json')
             .then(function (response) {
                 document.body.innerHTML += JSON.stringify(response.data);
                 console.log(response.data);
