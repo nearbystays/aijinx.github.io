@@ -16,7 +16,7 @@
 </head>
 <body>
     <script>
-        axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSLA&apikey=YOUR_API_KEY')
+        axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSLA&apikey=YOUR_API_KEY&interval=1min,outputsize=full&datatype=json')
             .then(function (response) {
                 document.body.innerHTML += JSON.stringify(response.data);
                 console.log(response.data);
