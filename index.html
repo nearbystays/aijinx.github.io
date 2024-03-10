@@ -19,8 +19,18 @@
         <h2>Get TSLA Data</h2>
         <table></table>
     <script>
+        async function saveToIndexedDB(key, val) {
+            const db = await idb.openDB('TSLA', 1, {
+                upgrade(db) {
+                    db.createObjectStore('TSLA');
+                },
+            });
+            await db.put('TSLA', val, key);
+            console.log('Data saved to indexedDB');
+        }
         axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSLA&apikey=YOUR_API_KEY&interval=1min,outputsize=full&datatype=json')
             .then(function (response) {
+                saveToIndexedDB('TSLA', response.data);
                 let data = response.data;
                 // Display the data on the webpage
                 let table = document.querySelector('table');
