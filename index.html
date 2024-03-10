@@ -64,12 +64,26 @@
                     .then(function (response) {
                         saveToIndexedDB('TSLA', response.data);
                         printDataToDOM(response.data);
-                        console.log(response.data);
                     })
                     .catch(function (error) {
-                        console.log(error);
+                        alert(error);
                     });
             }
+        }
+        async function getLast60MinutesData() {
+            const data = await getFromIndexedDB('TSLA');
+            const timeSeries = data['Time Series (1min)'];
+            const last60Minutes = Object.keys(timeSeries).slice(0, 60);
+            const last60MinutesData = last60Minutes.map((date) => {
+                return {
+                    date,
+                    open: timeSeries[date]['1. open'],
+                    high: timeSeries[date]['2. high'],
+                    low: timeSeries[date]['3. low'],
+                    close: timeSeries[date]['4. close'],
+                };
+            });
+            // console.log(last60MinutesData);
         }
         window.onload = getTSLAData;
     </script>
