@@ -49,17 +49,29 @@
                 },
             });
             await db.put('TSLA', val, key);
-            console.log('Data saved to indexedDB');
+            alert('Data saved to indexedDB')
         }
-        axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=TSLA&apikey=V476E4UJS67XBTL9&interval=1min,outputsize=full&datatype=json')
-            .then(function (response) {
-                saveToIndexedDB('TSLA', response.data);
-                printDataToDOM(response.data);
-                console.log(response.data);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+        async function getFromIndexedDB(key) {
+            const db = await idb.openDB('TSLA', 1);
+            return db.get('TSLA', key);
+        }
+        async function getTSLAData() {
+            const data = await getFromIndexedDB('TSLA');
+            if (data) {
+                printDataToDOM(data);
+            } else {
+                axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=TSLA&apikey=V476E4UJS67XBTL9&interval=1min,outputsize=full&datatype=json')
+                    .then(function (response) {
+                        saveToIndexedDB('TSLA', response.data);
+                        printDataToDOM(response.data);
+                        console.log(response.data);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            }
+        }
+        window.onload = getTSLAData;
     </script>
     </div>
 </body>
