@@ -13,90 +13,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.6.3/umd/react-dom.production.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        .g-signin2 {
-            margin-top: 20px;
-        }
-    </style>
-    <script>
-        function myMap() {
-            var mapProp = {
-                center: new google.maps.LatLng(51.508742, -0.120850),
-                zoom: 5,
-            };
-            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-        }
-        function renderButton() {
-            gapi.signin2.render('my-signin2', {
-                'scope': 'profile email',
-                'width': 240,
-                'height': 50,
-                'longtitle': true,
-                'theme': 'dark',
-            });
-        }
-    </script>
 </head>
 <body>
     <script>
         axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSLA&apikey=YOUR_API_KEY')
             .then(function (response) {
                 document.body.innerHTML += JSON.stringify(response.data);
-                // Display data in table and chart
-                document.body.innerHTML += '<table class="w3-table-all w3-hoverable"><tr><th>Date</th><th>Open</th><th>High</th><th>Low</th><th>Close</th><th>Volume</th></tr>';
-                for (var key in response.data['Time Series (Daily)']) {
-                    document.body.innerHTML += '<tr><td>' + key + '</td><td>' + response.data['Time Series (Daily)'][key]['1. open'] + '</td><td>' + response.data['Time Series (Daily)'][key]['2. high'] + '</td><td>' + response.data['Time Series (Daily)'][key]['3. low'] + '</td><td>' + response.data['Time Series (Daily)'][key]['4. close'] + '</td><td>' + response.data['Time Series (Daily)'][key]['5. volume'] + '</td></tr>';
-                }
-                document.body.innerHTML += '</table>';
-                // Chart
-                var dates = [];
-                var opens = [];
-                for (var key in response.data['Time Series (Daily)']) {
-                    dates.push(key);
-                    opens.push(response.data['Time Series (Daily)'][key]['1. open']);
-                }
-                var ctx = document.getElementById('myChart').getContext('2d');
-                var myChart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: dates,
-                        datasets: [{
-                            label: 'TSLA Open Prices',
-                            data: opens,
-                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: false
-                                }
-                            }]
-                        }
-                    }
-                });
+                console.log(response.data);
             })
             .catch(function (error) {
                 console.log(error);
             });
-    </script>
-    <div class="w3-container">
-        <h2>Google Sign-In</h2>
-        <div id="my-signin2" class="g-signin2" data-onsuccess="onSignIn"></div>
-        <canvas id="myChart" width="400" height="400"></canvas>
-    </div>
-    <div id="googleMap" style="width:100%;height:400px;"></div>
-    <script>
-        function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-            console.log('Name: ' + profile.getName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-        }
     </script>
 </body>
 </html>
