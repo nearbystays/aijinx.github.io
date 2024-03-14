@@ -17,15 +17,33 @@
 <body>
     <div class="w3-container">
         <h2>Get TSLA Data</h2>
+            <p id="stock-price">Loading...</p>
     <script>
-        axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=TSLA&apikey=YOUR_API_KEY&interval=1min,outputsize=full&datatype=json')
-            .then(function (response) {
-                document.body.innerHTML += JSON.stringify(response.data);
-                console.log(response.data);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+      fetch('https://www.google.com/finance/quote/TSLA:NASDAQ')
+        .then(response => response.text())
+        .then(data => {
+          // Use the data
+          const stockPrice = data.match(/<div class="YMlKec fxKbKc">([\d.]+)<\/div>/)[1];
+          document.getElementById('stock-price').textContent = stockPrice;
+
+          // Schedule the next request when the current one completes
+          setTimeout(fetchStockPrice, 5000);
+        })
+        .catch(error => {
+          // Handle the error
+          console.error('Error:', error);
+        });
+    </script>
+    <script>
+        // let request = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=TSLA&apikey=YOUR_API_KEY&interval=1min,outputsize=full&datatype=json'
+        // axios.get(request)
+        //    .then(function (response) {
+         //       document.body.innerHTML += JSON.stringify(response.data);
+          //      console.log(response.data);
+        //    })
+          //  .catch(function (error) {
+            //    console.log(error);
+          //  });
     </script>
     </div>
 </body>
