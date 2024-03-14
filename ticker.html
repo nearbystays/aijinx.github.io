@@ -6,7 +6,7 @@
   <body>
     <h1>Stock Ticker</h1>
     <p id="stock-price">Loading...</p>
-    <script src="ticker.js">
+    <script>
       fetch('https://www.google.com/finance/quote/TSLA:NASDAQ')
         .then(response => response.text())
         .then(data => {
