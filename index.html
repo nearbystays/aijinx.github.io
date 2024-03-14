@@ -19,20 +19,13 @@
         <h2>Get TSLA Data</h2>
             <p id="stock-price">Loading...</p>
     <script>
-      fetch('https://www.google.com/finance/quote/TSLA:NASDAQ')
-        .then(response => response.text())
-        .then(data => {
-          // Use the data
-          const stockPrice = data.match(/<div class="YMlKec fxKbKc">([\d.]+)<\/div>/)[1];
-          document.getElementById('stock-price').textContent = stockPrice;
-
-          // Schedule the next request when the current one completes
-          setTimeout(fetchStockPrice, 5000);
-        })
-        .catch(error => {
-          // Handle the error
-          console.error('Error:', error);
-        });
+        async function fetchStockPrice() {
+            const response = await fetch('https://www.google.com/finance/quote/TSLA:NASDAQ');
+            const data = await response.text();
+            const stockPrice = data.match(/<div class="YMlKec fxKbKc">([\d.]+)<\/div>/)[1];
+            document.getElementById('stock-price').textContent = stockPrice;
+            setTimeout(fetchStockPrice, 5000);
+        }
     </script>
     <script>
         // let request = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=TSLA&apikey=YOUR_API_KEY&interval=1min,outputsize=full&datatype=json'
