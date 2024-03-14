@@ -1,0 +1,1 @@
+bash: getTickerData001: command not found

@@ -1,0 +1,17 @@
+index.py
+index.py*
+index.html.*
+index.s*
+tsla.db
+key.pem
+cert.pem
+tpm
+codespaces-blank
+Jinx\ Env
+.vimrc
+.bashrc
+.bash_profile
+.bash_logout
+.profile
+.bash_history
+.bash_sessions
