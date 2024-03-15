@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Get TSLA Data</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -13,34 +14,49 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.6.3/umd/react-dom.production.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script>
+        // window.addEventListener('DOMContentLoaded', (event) => {
+        //     fetchStockPrice();
+        //     JfetchStockPrice();
+        // });
+        async function fetchStockPrice() {
+            document.getElementById('stock-price').textContent = "Updating at" + new Date().toLocaleTimeString() + "...";
+            const response = await fetch('https://www.google.com/finance/quote/TSLA:NASDAQ');
+            const data = await response.text();
+            const stockPrice = data.match(/<div class="YMlKec fxKbKc">([\d.]+)<\/div>/)[1];
+            document.getElementById('stock-price').textContent = response;
+            // setTimeout(fetchStockPrice, 5000);
+        }
+        async function JfetchStockPrice() {
+            document.getElementById('stock').textContent = "Updating at" + new Date().toLocaleTimeString() + "...";
+            const response = await axios.get('https://www.google.com/finance/quote/TSLA:NASDAQ');
+            const data = response.data;
+            const parser = new DOMParser();
+            const htmlDocument = parser.parseFromString(data, "text/html");
+            const stockPrice = htmlDocument.querySelector('.YMlKec.fxKbKc').textContent;
+            document.getElementById('stock').textContent = stockPrice;
+        }
+    </script>
+    <script>
+        // Parse index.txt show last line and update every 1 second.
+        async function parseIndex() {
+            const response = await fetch('index.txt');
+            const data = await response.text();
+            const lines = data.split('\n');
+            const lastLine = lines[lines.length - 2];
+            document.getElementById('Stock').textContent = lastLine;
+        }
+        setInterval(fetchStockPrice, 0);
+        setInterval(JfetchStockPrice, 0);
+        setTimeout(parseIndex, 0);
+    </script>
 </head>
 <body>
     <div class="w3-container">
         <h2>Get TSLA Data</h2>
+            <p id="Stock">1st Loading...</p>
             <p id="stock-price">Loading...</p>
-    <script>
-        window.addEventListener('DOMContentLoaded', (event) => {
-            fetchStockPrice();
-        });
-        async function fetchStockPrice() {
-            const response = await fetch('https://www.google.com/finance/quote/TSLA:NASDAQ');
-            const data = await response.text();
-            const stockPrice = data.match(/<div class="YMlKec fxKbKc">([\d.]+)<\/div>/)[1];
-            document.getElementById('stock-price').textContent = stockPrice;
-            setTimeout(fetchStockPrice, 5000);
-        }
-    </script>
-    <script>
-        // let request = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=TSLA&apikey=YOUR_API_KEY&interval=1min,outputsize=full&datatype=json'
-        // axios.get(request)
-        //    .then(function (response) {
-         //       document.body.innerHTML += JSON.stringify(response.data);
-          //      console.log(response.data);
-        //    })
-          //  .catch(function (error) {
-            //    console.log(error);
-          //  });
-    </script>
+            <p id="stock">2nd Loading...</p>
     </div>
 </body>
 </html>
