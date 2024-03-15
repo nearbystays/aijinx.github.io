@@ -117,7 +117,7 @@ init_df.to_html('templates/' + STOCK + str(dt.date.today()) +
 if not os.path.exists('static/images'):
     os.makedirs('static/images', exist_ok=True)
 # Save the plot
-init_df.savefig('static/images/' + STOCK + str(dt.date.today()) + '_' + tm.strftime('%H:%M:%S.%f') + '.png')
+plt.savefig('static/images/' + STOCK + str(dt.date.today()) + '_' + tm.strftime('%H:%M:%S.%f') + '.png')
 
 # Let's preliminary see our data on the graphic
 plt.style.use(style='ggplot')
