@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Data from SQLite Database</title>
+    <script src="https://unpkg.com/sql.js"></script>
+</head>
+<body>
+    <form id="queryForm">
+        <input type="text" id="query" placeholder="Enter SQL query">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="output"></div>
+
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'index.db', true);
+        xhr.responseType = 'arraybuffer';
+
+        xhr.onload = function(e) {
+            var uInt8Array = new Uint8Array(this.response);
+            var db = new SQL.Database(uInt8Array);
+            var contents = db.exec("SELECT * FROM TSLA_1d");
+            document.getElementById('output').textContent = JSON.stringify(contents);
+        };
+
+        xhr.send();
+
+        document.getElementById('queryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var query = document.getElementById('query').value;
+            var results = db.exec(query);
+            document.getElementById('output').textContent = JSON.stringify(results);
+        });
+    </script>
+</body>
+</html>

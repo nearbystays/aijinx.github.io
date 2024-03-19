@@ -1,0 +1,130 @@
+Stock DataNVDA 1m
+Stock DataNVDA 1m
+Stock DataNVDA 1m
+Stock DataNVDA 1m
+Stock DataNVDA 1m
+Stock DataNVDA 1m
+Stock DataNVDA 1m
+Stock DataNVDA 1m
+Stock DataNVDA 1m
+Stock DataRIVN 1m
+Stock DataNVDA 1m
+Stock DataNVDA 1m
+Stock DataNVDA 1m
+Stock DataNVDA 1m
+Stock DataNVDA 1m
+Stock DataNFLX 1m
+Stock DataNFLX 1m
+Stock DataNFLX 1m
+Stock DataSPY 1m
+Stock DataNFLX 1m
+Stock DataNFLX 1m
+Stock DataTQQQ 1m
+Stock DataNFLX 1m
+Stock DataNFLX 1m
+Stock DataPLTR 1m
+Stock DataNFLX 1m
+Stock DataBRK.B 1m
+Stock DataLCID 1m
+Stock DataSPY 1m
+Stock DataPLTR 1m
+Stock DataSBUX 1m
+Stock DataMSFT 1m
+Advanced Bayesian Probabilities
+Bayesian Probability Up Close Given Up Close 100:  0.6978287092882992
+Bayesian Probability Down Close Given Down Close 100:  0.4065126050420168
+Bayesian 100: P(MSFT Up | MSFT Up & AAPL Up) 0.6978287092882992
+MSFT Last Price:  ['416.42']
+Names and Prices:  [('Apple Inc', '172.62'), ('Amazon.com Inc', '174.42'), ('NVIDIA Corp', '878.365'), ('Meta Platforms Inc', '484.1'), ('Tesla Inc', '163.57'), ('Alphabet Inc Class C', '142.17'), ('Netflix Inc', '605.88'), ('Alphabet Inc Class A', '141.18'), ('Berkshire Hathaway Inc Class B', '408.13'), ('Starbucks Corp', '90.12')]
+Symbols:  ['AAPL', 'AMZN', 'NVDA', 'META', 'TSLA', 'GOOG', 'NFLX', 'GOOGL', 'BRK.B', 'SBUX']
+Stock DataPLTR 1m
+Stock DataSPY 1m
+Stock DataBRK.B 1m
+Stock DataINTC 1m
+Stock DataAAPL 1m
+Advanced Bayesian Probabilities
+Bayesian Probability Up Close Given Up Close 100:  0.6288323548597521
+Bayesian Probability Down Close Given Down Close 100:  0.40651162790697676
+Bayesian 100: P(AAPL Up | AAPL Up & AAPL Up) 0.6288323548597521
+AAPL Last Price:  ['172.62']
+Names and Prices:  [('Amazon.com Inc', '174.42'), ('Tesla Inc', '163.57'), ('Microsoft Corp', '416.42'), ('NVIDIA Corp', '878.365'), ('Alphabet Inc Class A', '141.18'), ('Netflix Inc', '605.88'), ('SPDR S&P 500 ETF Trust', '509.83'), ('Palantir Technologies Inc', '23.49'), ('Alphabet Inc Class C', '142.17'), ('Intel Corp', '42.64')]
+Symbols:  ['AMZN', 'TSLA', 'MSFT', 'NVDA', 'GOOGL', 'NFLX', 'SPY', 'PLTR', 'GOOG', 'INTC']
+Stock DataSOXL 1m
+Stock DataPLTR 1m
+Stock DataPLTR 1m
+Stock DataSMCI 1m
+Stock DataPLTR 1m
+Stock DataMETA 1m
+Advanced Bayesian Probabilities
+Bayesian Probability Up Close Given Up Close 100:  0.5399686520376176
+Bayesian Probability Down Close Given Down Close 100:  0.5356339084771192
+Bayesian 100: P(META Up | META Up & AAPL Up) 0.5399686520376176
+META Last Price:  ['484.1']
+Names and Prices:  [('Microsoft Corp', '416.42'), ('NVIDIA Corp', '878.365'), ('Amazon.com Inc', '174.42'), ('Apple Inc', '172.62'), ('Tesla Inc', '163.57'), ('Alphabet Inc Class C', '142.17'), ('Alphabet Inc Class A', '141.18'), ('Palantir Technologies Inc', '23.49'), ('SPDR S&P 500 ETF Trust', '509.83'), ('Super Micro Computer Inc', '1068.83')]
+Symbols:  ['MSFT', 'NVDA', 'AMZN', 'AAPL', 'TSLA', 'GOOG', 'GOOGL', 'PLTR', 'SPY', 'SMCI']
+Stock DataSBUX 1m
+Stock DataMSFT 1m
+Advanced Bayesian Probabilities
+Bayesian Probability Up Close Given Up Close 100:  0.6978287092882992
+Bayesian Probability Down Close Given Down Close 100:  0.4065126050420168
+Bayesian 100: P(MSFT Up | MSFT Up & AAPL Up) 0.6978287092882992
+MSFT Last Price:  ['416.42']
+Names and Prices:  [('Apple Inc', '172.62'), ('Amazon.com Inc', '174.42'), ('NVIDIA Corp', '878.365'), ('Meta Platforms Inc', '484.1'), ('Tesla Inc', '163.57'), ('Alphabet Inc Class C', '142.17'), ('Netflix Inc', '605.88'), ('Alphabet Inc Class A', '141.18'), ('Berkshire Hathaway Inc Class B', '408.13'), ('Starbucks Corp', '90.12')]
+Symbols:  ['AAPL', 'AMZN', 'NVDA', 'META', 'TSLA', 'GOOG', 'NFLX', 'GOOGL', 'BRK.B', 'SBUX']
+Stock DataENPH 1m
+Stock DataINTC 1m
+Stock DataINTC 1m
+Stock DataTSLA 1m
+Advanced Bayesian Probabilities
+Bayesian Probability Up Close Given Up Close 100:  0.42729970326409494
+Bayesian Probability Down Close Given Down Close 100:  0.7116948092557849
+Bayesian 100: P(TSLA Up | TSLA Up & AAPL Up) 0.42729970326409494
+TSLA Last Price:  ['163.57']
+Names and Prices:  [('Apple Inc', '172.62'), ('Amazon.com Inc', '174.42'), ('Rivian Automotive Inc', '11.04'), ('NVIDIA Corp', '878.365'), ('Netflix Inc', '605.88'), ('ProShares UltraPro QQQ', '57.76'), ('Lucid Group Inc', '2.7'), ('Microsoft Corp', '416.42'), ('Direxion Daily Semiconductor Bull 3X Shares', '42.74'), ('Enphase Energy Inc', '107.73')]
+Symbols:  ['AAPL', 'AMZN', 'RIVN', 'NVDA', 'NFLX', 'TQQQ', 'LCID', 'MSFT', 'SOXL', 'ENPH']
+Stock DataAAPL 1m
+Advanced Bayesian Probabilities
+Bayesian Probability Up Close Given Up Close 100:  0.6288323548597521
+Bayesian Probability Down Close Given Down Close 100:  0.40651162790697676
+Bayesian 100: P(AAPL Up | AAPL Up & AAPL Up) 0.6288323548597521
+AAPL Last Price:  ['172.62']
+Names and Prices:  [('Amazon.com Inc', '174.42'), ('Tesla Inc', '163.57'), ('Microsoft Corp', '416.42'), ('NVIDIA Corp', '878.365'), ('Alphabet Inc Class A', '141.18'), ('Netflix Inc', '605.88'), ('SPDR S&P 500 ETF Trust', '509.83'), ('Palantir Technologies Inc', '23.49'), ('Alphabet Inc Class C', '142.17'), ('Intel Corp', '42.64')]
+Symbols:  ['AMZN', 'TSLA', 'MSFT', 'NVDA', 'GOOGL', 'NFLX', 'SPY', 'PLTR', 'GOOG', 'INTC']
+Stock DataINTC 1m
+Stock DataAMZN 1m
+Advanced Bayesian Probabilities
+Bayesian Probability Up Close Given Up Close 100:  0.6644385026737968
+Bayesian Probability Down Close Given Down Close 100:  0.43204320432043203
+Bayesian 100: P(AMZN Up | AMZN Up & AAPL Up) 0.6644385026737968
+AMZN Last Price:  ['174.42']
+Names and Prices:  [('Apple Inc', '172.62'), ('Microsoft Corp', '416.42'), ('Tesla Inc', '163.57'), ('NVIDIA Corp', '878.365'), ('Alphabet Inc Class A', '141.18'), ('Netflix Inc', '605.88'), ('Alphabet Inc Class C', '142.17'), ('Meta Platforms Inc', '484.1'), ('Palantir Technologies Inc', '23.49'), ('Intel Corp', '42.64')]
+Symbols:  ['AAPL', 'MSFT', 'TSLA', 'NVDA', 'GOOGL', 'NFLX', 'GOOG', 'META', 'PLTR', 'INTC']
+Stock DataINTC 1m
+Stock DataAMZN 1m
+Advanced Bayesian Probabilities
+Bayesian Probability Up Close Given Up Close 100:  0.6644385026737968
+Bayesian Probability Down Close Given Down Close 100:  0.43204320432043203
+Bayesian 100: P(AMZN Up | AMZN Up & AAPL Up) 0.6644385026737968
+AMZN Last Price:  ['174.42']
+Names and Prices:  [('Apple Inc', '172.62'), ('Microsoft Corp', '416.42'), ('Tesla Inc', '163.57'), ('NVIDIA Corp', '878.365'), ('Alphabet Inc Class A', '141.18'), ('Netflix Inc', '605.88'), ('Alphabet Inc Class C', '142.17'), ('Meta Platforms Inc', '484.1'), ('Palantir Technologies Inc', '23.49'), ('Intel Corp', '42.64')]
+Symbols:  ['AAPL', 'MSFT', 'TSLA', 'NVDA', 'GOOGL', 'NFLX', 'GOOG', 'META', 'PLTR', 'INTC']
+Stock DataAMZN 1m
+Advanced Bayesian Probabilities
+Bayesian Probability Up Close Given Up Close 100:  0.6644385026737968
+Bayesian Probability Down Close Given Down Close 100:  0.43204320432043203
+Bayesian 100: P(AMZN Up | AMZN Up & AAPL Up) 0.6644385026737968
+AMZN Last Price:  ['174.42']
+Names and Prices:  [('Apple Inc', '172.62'), ('Microsoft Corp', '416.42'), ('Tesla Inc', '163.57'), ('NVIDIA Corp', '878.365'), ('Alphabet Inc Class A', '141.18'), ('Netflix Inc', '605.88'), ('Alphabet Inc Class C', '142.17'), ('Meta Platforms Inc', '484.1'), ('Palantir Technologies Inc', '23.49'), ('Intel Corp', '42.64')]
+Symbols:  ['AAPL', 'MSFT', 'TSLA', 'NVDA', 'GOOGL', 'NFLX', 'GOOG', 'META', 'PLTR', 'INTC']
+Stock DataNVDA 1m
+Stock DataNVDA 1m
+Stock DataNFLX 1m
+Stock DataNFLX 1m
+Stock DataNFLX 1m
+Stock DataRIVN 1m
+Stock DataNVDA 1m
+Stock DataSPY 1m
+Stock DataNVDA 1m
+Stock DataPLTR 1m
+Stock DataNFLX 1m
+Stock DataNVDA 1m
